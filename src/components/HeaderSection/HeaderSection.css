@@ -1,0 +1,8 @@
+.header-section{
+    height: 75vh;
+    width: 100vw;
+}
+
+img{
+    filter: brightness(50%)
+}

@@ -1,5 +1,37 @@
 {
-  "customers": [],
-  "vehicles": [],
+  "customers": [
+    {
+      "id": "hsyinwsij67-23skkitjslpas7tss",
+     "firstname": "Georgi",
+     "lastname": "Georiev",
+     "email": "goshu99@abv.bg",
+     "orders": []
+   }
+  ],
+  "vehicles": [
+    {
+      "id": "hsdsaytd-12321313sdasd231dsa",
+      "brand": "Mercedes",
+      "model": "S600 Maybach",
+      "year": "2021",
+      "fuel": "petrol",
+      "numberOfSeats": 5,
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOuQv-IyjW8yIiSZrh_j3a9Yz_j21bGB_l8g&usqp=CAU",
+      "pricePerDay": 2000,
+      "avaliableVehicles": 10
+   },
+   {
+    "id": "hsdsaytd-12321313sdasd231dsa",
+    "brand": "Mercedes",
+    "model": "S600 Maybach",
+    "year": "2021",
+    "fuel": "petrol",
+    "numberOfSeats": 5,
+    "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOuQv-IyjW8yIiSZrh_j3a9Yz_j21bGB_l8g&usqp=CAU",
+    "pricePerDay": 2000,
+    "avaliableVehicles": 10
+ }
+  ],
   "orders": []
 }
+

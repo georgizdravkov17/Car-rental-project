@@ -1,0 +1,13 @@
+.news-letter{
+    background-color: #085C88;
+    height: 25vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-letter:hover{
+    cursor: pointer;
+    background-color: #00A5FF;
+}
