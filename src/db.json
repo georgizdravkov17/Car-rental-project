@@ -2,11 +2,49 @@
   "customers": [
     {
       "id": "hsyinwsij67-23skkitjslpas7tss",
-     "firstname": "Georgi",
-     "lastname": "Georiev",
-     "email": "goshu99@abv.bg",
-     "orders": []
-   }
+      "firstname": "Georgi",
+      "lastname": "Georiev",
+      "username": "goshu99@abv.bg",
+      "password": "12345678",
+      "email": "goshu99@abv.bg",
+      "isAdmin": true,
+      "orders": []
+    },
+    {
+      "id": "e39686d5-c01d-4eea-a688-43fb6032ff53",
+      "firstname": "Ivan",
+      "lastname": "Zdravkov",
+      "username": "Dimitrov",
+      "email": "ivandimitrov@abv.bg",
+      "password": "ADwuzZHL44!urfY",
+      "isAdmin": false,
+      "orders": []
+    },
+    {
+      "email": "goshu99@abv.bg",
+      "password": "12345678",
+      "id": "SA982WD"
+    },
+    {
+      "id": "910406d2-c7f8-47b4-9908-b782c0877c89",
+      "firstname": "Georgi",
+      "lastname": "Zdravkov",
+      "username": "Dimitrov",
+      "email": "georgizdravkov1706@gmail.com",
+      "password": "ADwuzZHL44!urfY",
+      "isAdmin": false,
+      "orders": []
+    },
+    {
+      "id": "78ef49a3-e2c7-432b-b397-f7eb9cfb5d61",
+      "firstname": "Georgi",
+      "lastname": "Zdravkov",
+      "username": "didkoo",
+      "email": "diyannedkov@abv.bg",
+      "password": "fiorapower1",
+      "isAdmin": false,
+      "orders": []
+    }
   ],
   "vehicles": [
     {
@@ -19,19 +57,18 @@
       "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOuQv-IyjW8yIiSZrh_j3a9Yz_j21bGB_l8g&usqp=CAU",
       "pricePerDay": 2000,
       "avaliableVehicles": 10
-   },
-   {
-    "id": "hsdsaytd-12321313sdasd231dsa",
-    "brand": "Mercedes",
-    "model": "S600 Maybach",
-    "year": "2021",
-    "fuel": "petrol",
-    "numberOfSeats": 5,
-    "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOuQv-IyjW8yIiSZrh_j3a9Yz_j21bGB_l8g&usqp=CAU",
-    "pricePerDay": 2000,
-    "avaliableVehicles": 10
- }
+    },
+    {
+      "id": "hsdsaytd-12321313sdasd231dsa",
+      "brand": "Mercedes",
+      "model": "S600 Maybach",
+      "year": "2021",
+      "fuel": "petrol",
+      "numberOfSeats": 5,
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOuQv-IyjW8yIiSZrh_j3a9Yz_j21bGB_l8g&usqp=CAU",
+      "pricePerDay": 2000,
+      "avaliableVehicles": 10
+    }
   ],
   "orders": []
 }
-

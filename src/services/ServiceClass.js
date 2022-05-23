@@ -5,7 +5,10 @@ class Service{
        this.url = url;
     }
 
-    getAll(){
+    getAll(limit){
+        if(limit){
+            return axios.get(this.url, { params: { _limit: limit } });
+        }
         return axios.get(this.url);
     }
 
