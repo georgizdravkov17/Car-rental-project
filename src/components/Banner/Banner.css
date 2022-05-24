@@ -1,0 +1,12 @@
+.banner{
+    width: 100vw;
+    height: 60vh;
+    padding: 2rem;
+    background-color: #385462;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}

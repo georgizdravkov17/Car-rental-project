@@ -1,19 +1,58 @@
-import React from 'react';
-import {Card, Button} from 'react-bootstrap';
+import React, { useState } from 'react';
+import {Card, Button, Fade, Modal} from 'react-bootstrap';
 
-const CarCard = ({img}) => {
+const CarCard = ({vehicle}) => {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <Card className="box-shadow" style={{ width: '18rem', border: 'none' }}>
-  <Card.Img variant="top" src={img} />
+    <>
+    <Fade in={true}>
+    <Card className="box-shadow" style={{ width: '23%', border: 'none', backgroundColor: 'inherit' }}>
+  <Card.Img variant="top" src={vehicle.picture} />
   <Card.Body>
-    <Card.Title>Mercedes Benz</Card.Title>
+    <Card.Title>{vehicle.brand} {vehicle.model}</Card.Title>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+       <p>Type:{vehicle.type}</p>
+       <p>Year:{vehicle.year}</p>
+       <p>Fuel:{vehicle.fuel}</p>
+       <p>Seats:{vehicle.numberOfSeats}</p>
+       <h4>${vehicle.pricePerDay}</h4>
+       <p>Avaliable vehicles:{vehicle.avaliableVehicles}</p>
     </Card.Text>
-    <Button variant="primary">View Car</Button>
+    <Button variant="primary" onClick={handleShow}>View Car</Button>
   </Card.Body>
 </Card>
+</Fade>
+
+<Modal show={show} onHide={handleClose} style={{color: 'black'}}>
+        <Modal.Header closeButton>
+          <Modal.Title>{vehicle.brand} {vehicle.model}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+           <div className="img">
+               <img src={vehicle.picture} alt={vehicle.brand} />
+            </div> 
+           <div className="info">
+           <p>Type:{vehicle.type}</p>
+       <p>Year:{vehicle.year}</p>
+       <p>Fuel:{vehicle.fuel}</p>
+       <p>Seats:{vehicle.numberOfSeats}</p>
+       <h4>${vehicle.pricePerDay}</h4>
+       <p>Avaliable vehicles:{vehicle.avaliableVehicles}</p>
+            </div> 
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+</>
   )
 }
 

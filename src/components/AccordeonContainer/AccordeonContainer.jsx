@@ -5,7 +5,7 @@ import './AccordeonContainer.css';
 const AccordeonContainer = () => {
   return (
     <div className="accordeon-container">
-        <Accordion>
+        <Accordion style={{backgroundColor: "inherit", color: "inherit"}} >
   <Accordion.Item eventKey="0">
     <Accordion.Header>Accordion Item #1</Accordion.Header>
     <Accordion.Body>

@@ -6,3 +6,9 @@ export const logout_customer = () => {
     localStorage.removeItem("customer");
 }
 
+// export const printCollection = (collection, Component) => {
+//     return collection.map(element => <Component />)
+// }
+
+
+

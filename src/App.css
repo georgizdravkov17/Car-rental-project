@@ -9,8 +9,8 @@
 body{
     font-size: 18px;
     overflow-x: hidden;
-    background-color: aqua;
-    color: black !important;
+    background-color: #222222 !important;
+    color: white !important;
 }
 
 img{
@@ -24,10 +24,35 @@ img{
 }
 
 .container{
-    display: grid;
-    text-align: center;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     grid-gap: 1rem;
+}
+
+.wrapper{
+    padding: 2rem;
+    background-color: #333333;
+    margin: 2rem;
+    text-align: center;
+    box-shadow: 2px 6px 13px 4px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 6px 13px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 6px 13px 4px rgba(0,0,0,0.75);
+}
+
+.upper{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 0 3.5rem;
+}
+
+.heading{
+    font-size: 2.5rem;
+    font-style: italic;
+    color: goldenrod;
+    margin: 1.5rem 0;
 }
 
 .box-shadow{
