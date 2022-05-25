@@ -22,7 +22,18 @@ export const CustomersProvider = ({children}) => {
        })
     }, [])
 
+    const deleteCustomer = (id) => {
+      customersService.delete(id)
+      .then(_ => {
+          setCustomers(customers.filter(customer => customer.id !== id));
+         alert("Succesfully deleted customer!");
+      })
+      .catch(err => {
+          console.log(err);
+      })
+    }
+
     return(
-        <CustomersContext.Provider value={{customers}}>{children}</CustomersContext.Provider>
+        <CustomersContext.Provider value={{customers, deleteCustomer}}>{children}</CustomersContext.Provider>
     );
 }

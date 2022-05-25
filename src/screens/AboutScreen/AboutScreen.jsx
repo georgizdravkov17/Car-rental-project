@@ -9,7 +9,6 @@ const AboutScreen = () => {
   return (
     <div className="about-screen">
          <HeaderSection img={carsImages[1]}/>
-         <Fade >
          <div className="info">
              <h1 className="heading">Who are we?</h1>
               <p>Car Rental USA - Cheap rental cars for your road trip in the United States
@@ -20,11 +19,10 @@ You can’t go wrong with a car rental USA. There’s more to it than giving you
 
 To get a car rental in the United States that’s perfect for your particular journey and budget, our simple search engine will serve up many options from a spectrum of car rental companies. all you need to do is enter a few basic details about your travel - like where you want to pick up your vehicle from, where you’re ultimately headed to and the dates of your journey. You can then scroll through a range of USA car hire options from a number of different suppliers and select the best car for you. Use our handy filters and you’ll find the perfect vehicle to take you away on another adventure.</p>
          </div>
-         </Fade>
          <Banner />
          <HeaderSection img={carsImages[0]}/>
          <NewsLetter />
-         <ReactPlayer url={carsVideos[0]} controls />
+         <ReactPlayer url="https://www.youtube.com/watch?v=HJuStxoaDf8&ab_channel=Mercedes-Benz" width="100vw" height="85vh" controls />
     </div>
   )
 }

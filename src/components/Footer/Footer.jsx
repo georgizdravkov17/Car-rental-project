@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBarcode } from '@fortawesome/free-solid-svg-icons';
 import "./Footer.css";
 
 const Footer = () => {
@@ -6,12 +8,15 @@ const Footer = () => {
     <footer className="footer">
        <p>All rights reserved by Mercedes-benz</p>
        <div className="social-media">
-           <p>Facebook</p>
-           <p>Facebook</p>
-           <p>Facebook</p>
+       <FontAwesomeIcon icon={faBarcode} />
+       <FontAwesomeIcon icon={faBarcode} />
+       <FontAwesomeIcon icon={faBarcode} />
+       <FontAwesomeIcon icon={faBarcode} />
+       <FontAwesomeIcon icon={faBarcode} />
         </div> 
     </footer>
   )
 }
 
 export default Footer
+

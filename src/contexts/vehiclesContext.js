@@ -22,8 +22,21 @@ export const VehiclesProvider = ({children}) => {
        })
     }, [])
 
+    
+
+    const deleteVehicle = (id) => {
+        vehicleService.delete(id)
+        .then(_ => {
+            setVehicles(vehicles.filter(vehicle => vehicle.id !== id));
+            alert("Succesfully deleted vehicle");
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
     return(
-        <VehiclesContext.Provider value={{vehicles}}>
+        <VehiclesContext.Provider value={{vehicles, deleteVehicle}}>
             {children}
         </VehiclesContext.Provider>
     )

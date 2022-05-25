@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { CustomersContext } from '../../contexts/customersContext.js';
 import { authenticate_user } from '../../services/authService.js';
 import { base_URL } from '../../helpers/constants.js';
-import { Button } from 'react-bootstrap';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Button, Form, InputGroup } from 'react-bootstrap';
+import { Formik } from 'formik';
 import { loginUserSchema } from '../../validations/customerValidation.js';
 
 const login_URL = `${base_URL}/customers`;
@@ -45,28 +45,57 @@ const LoginScreen = () => {
 }
 
   return (
-    <div className="login-screen">
-        <Formik
-          initialValues={initialValues}
-          validationSchema={loginUserSchema}
-          onSubmit={onSubmit}
-        >
-           <Form>
-               <div className="form-control">
-                   <div className="error">
-                       <ErrorMessage name="email" />
-                   </div>
-                   <Field type="email" name="email" placeholder="Email" required />
-               </div>
-               <div className="form-control">
-                   <div className="error">
-                       <ErrorMessage name="password" />
-                   </div>
-                   <Field type="password" name="password" placeholder="Password" required />
-               </div>
-               <Button type="submit" variant="primary">Login</Button>
-           </Form>
-        </Formik>
+    <div className="login-screen form-container">
+         <Formik
+      validationSchema={loginUserSchema}
+      onSubmit={onSubmit}
+      initialValues={initialValues}
+    >
+      {({
+        handleSubmit,
+        handleChange,
+        handleBlur,
+        values,
+        touched,
+        isValid,
+        errors,
+      }) => (
+        <Form className="form box-shadow" autoComplete="off"  noValidate onSubmit={handleSubmit}>
+            <Form.Group  controlId="validationFormik03">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+              autoComplete="off"
+                type="email"
+                placeholder="Email"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                isInvalid={!!errors.email}
+              />
+
+              <Form.Control.Feedback type="invalid">
+                {errors.email}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group  controlId="validationFormik04">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+              autoComplete="off"
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={values.password}
+                onChange={handleChange}
+                isInvalid={!!errors.password}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.password}
+              </Form.Control.Feedback>
+            </Form.Group>
+          <Button type="submit">Login</Button>
+        </Form>
+      )}
+    </Formik>
     </div>
   )
 }

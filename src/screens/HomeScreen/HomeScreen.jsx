@@ -2,6 +2,7 @@ import React, { useContext }from 'react';
 import { useNavigate } from 'react-router-dom';
 import { VehiclesContext } from '../../contexts/vehiclesContext.js';
 import { Button } from 'react-bootstrap';
+import ReactPlayer from 'react-player';
 import { vehicleTypes } from '../../helpers/constants.js';
 import { HeaderSection, CarCard, NewsLetter, AccordeonContainer, Banner, Slider } from '../../components/components.js';
 import { carsImages } from '../../helpers/data.js';
@@ -75,9 +76,8 @@ const HomeScreen = () => {
            </div>
         </div>
         <Banner />
-       <AccordeonContainer />
+       <ReactPlayer url="https://www.youtube.com/watch?v=HJuStxoaDf8&ab_channel=Mercedes-Benz" width="100vw" height="85vh" controls />
        <NewsLetter />
-       <h1>Heading</h1>
     </div>
   )
 }

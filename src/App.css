@@ -55,6 +55,33 @@ img{
     margin: 1.5rem 0;
 }
 
+.form-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    padding: 2rem 4rem;
+    border: 1px solid black;
+    background-color: black;
+
+}
+
+input{
+    padding: 0.5rem;
+    border: none;
+    color: white !important;
+}
+
+.form-control{
+    background-color: #222222 !important;
+    border: none !important;
+}
+
+
 .box-shadow{
     box-shadow: 2px 6px 13px 4px rgba(0,0,0,0.75);
 -webkit-box-shadow: 2px 6px 13px 4px rgba(0,0,0,0.75);
@@ -65,5 +92,9 @@ img{
     box-shadow: 0px 11px 5px 0px rgba(0,0,0,0.75);
 -webkit-box-shadow: 0px 11px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 11px 5px 0px rgba(0,0,0,0.75);
+}
+
+.icon{
+    margin-right: 0.3rem;
 }
 

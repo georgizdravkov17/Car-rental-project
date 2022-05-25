@@ -17,7 +17,7 @@ class Service{
     }
 
     create(data){
-        return axios.post(this.url);
+        return axios.post(this.url, data);
     }
 
     delete(id){

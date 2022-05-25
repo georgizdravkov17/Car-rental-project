@@ -6,3 +6,4 @@ export { default as NewsLetter } from './NewsLetter/NewsLetter.jsx';
 export { default as AccordeonContainer } from './AccordeonContainer/AccordeonContainer.jsx';
 export { default as Banner } from './Banner/Banner.jsx';
 export { default as Slider } from './Slider/Slider.jsx';
+export { default as SearchBar } from './SearchBar/SearchBar.jsx';
