@@ -1,6 +1,39 @@
 .dashboard-screen{
-    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.aside-bar{
+    width: 15%;
+    height: 100vh;
+    padding: 4rem 1rem;
+    border-right: 1px solid goldenrod;
+    border-bottom: 1px solid goldenrod;
+}
+
+.aside-bar a{
+    color: white;
+    text-decoration: none;
+}
+
+.item{
+    padding: 0.2rem;
+    border-bottom: 1px solid goldenrod;
+    border-right: 1px solid goldenrod;
+}
+
+.content{
+    padding: 2rem;
+    width: 85%;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
 
 .search-bar-container{
     display: flex;

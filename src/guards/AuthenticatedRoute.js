@@ -1,0 +1,11 @@
+import { Outlet, Navigate } from 'react-router-dom';
+import { get_logged_customer } from '../helpers/functions.js';
+
+const AuthenticatedRoute = () => {
+    
+    const loggedUser = get_logged_customer();
+    
+    return loggedUser ? <Outlet /> : <Navigate to="/login" />
+}
+
+export default AuthenticatedRoute;

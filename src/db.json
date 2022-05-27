@@ -56,6 +56,11 @@
       ],
       "orders": [],
       "createdAt": "2022-05-25T14:38:09.676Z"
+    },
+    {
+      "email": "goshu99@abv.bg",
+      "password": "12345678",
+      "id": "7vP3SX-"
     }
   ],
   "vehicles": [
@@ -705,6 +710,18 @@
       "numberOfSeats": 5,
       "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOuQv-IyjW8yIiSZrh_j3a9Yz_j21bGB_l8g&usqp=CAU",
       "pricePerDay": 2000,
+      "avaliableVehicles": 10
+    },
+    {
+      "id": "4a797061-e99c-45f3-8b5c-d0bbb11a5bf6",
+      "type": "luxury",
+      "brand": "Audi",
+      "model": "A8",
+      "year": 2008,
+      "fuel": "diesel",
+      "numberOfSeats": 5,
+      "picture": "https://dizzyriders.bg/uploads/thumbs/avtomobili/2021_11/2022-audi-a8-33-620x427.jpg",
+      "pricePerDay": 700,
       "avaliableVehicles": 10
     }
   ],

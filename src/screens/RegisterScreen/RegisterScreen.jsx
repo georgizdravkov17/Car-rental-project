@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid';
 import { base_URL } from '../../helpers/constants.js';
 import { Formik } from 'formik';
 import { registerUserSchema } from '../../validations/customerValidation.js';
-import { Button, Row, Col, InputGroup, Form ,FormControl } from 'react-bootstrap';
+import { Button, InputGroup, Form ,FormControl } from 'react-bootstrap';
 
 const register_URL = `${base_URL}/customers`;
 

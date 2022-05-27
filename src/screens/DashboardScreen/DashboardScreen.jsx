@@ -1,5 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useContext, useState, useEffect } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import { SearchBar, Slider } from '../../components/components.js';
@@ -11,43 +12,38 @@ import './DashboardScreen.css';
 
 const DashboardScreen = () => {
 
-  const navigate = useNavigate();
+    const { customers } = useContext(CustomersContext);
+    const { vehicles } = useContext(VehiclesContext);
+    const { messages } = useContext(MessagesContext);
+    const { orders } = useContext(OrdersContext);
 
-  const { customers, deleteCustomer } = useContext(CustomersContext);
-  const { orders } = useContext(OrdersContext);
-  const { vehicles, deleteVehicle } = useContext(VehiclesContext);
-  const {messages, deleteMessage} = useContext(MessagesContext);
+    const printCustomers = () => {
+      return customers.slice(-4).map(({id, firstname, lastname, username, email, createdAt ,isAdmin}, index) => (
+       <tr>
+       <td>{index + 1}</td>
+       <td>{id}</td>
+       <td>{firstname}</td>
+       <td>{lastname}</td>
+       <td>{username}</td>
+       <td>{email}</td>
+       <td>{isAdmin ? "True" : "False"}</td>
+     </tr>
+      ))
+   }
 
-  const [customersQuery, setCustomersQuery] = useState("");
-  const [ordersQuery, setOrdersQuery] = useState("");
-  const [vehiclesQuery, setVehiclesQuery] = useState("");
-  const [messagesQuery, setMessagesQuery] = useState("");
-
-
-
-  const printCustomers = () => {
-     return customers.map(({id, firstname, lastname, username, email, createdAt ,isAdmin}, index) => (
-      <tr>
-      <td>{index + 1}</td>
-      <td>{id}</td>
-      <td>{firstname}</td>
-      <td>{lastname}</td>
-      <td>{username}</td>
-      <td>{email}</td>
-      <td>{isAdmin ? "True" : "False"}</td>
-      <td>
-       <Button variant="danger" onClick={() => { deleteCustomer(id) }}>X</Button>
-       <Button variant="success" onClick={() => { navigate(id) }}>V</Button></td>
-    </tr>
-     ))
+   const printMessages = () => {
+    return messages.slice(-4).map(({id, email, message }, index) => (
+              <tr>
+                <td>{index + 1}</td>
+                <td>{id}</td>
+                <td>{email}</td>
+                <td>{message}</td>
+              </tr>
+    ))
   }
 
-  // const printOrders = () => {
-    
-  // }
-
   const printVehicles = () => {
-    return vehicles.map(({id, type, brand, model, year, fuel, numberOfSeats, pricePerDay, avaliableVehicles }, index) => (
+    return vehicles.slice(-4).map(({id, type, brand, model, year, fuel, numberOfSeats, pricePerDay, avaliableVehicles }, index) => (
               <tr>
                 <td>{index + 1}</td>
                 <td>{id}</td>
@@ -59,34 +55,71 @@ const DashboardScreen = () => {
                 <td>{numberOfSeats}</td>
                 <td>{pricePerDay}</td>
                 <td>{avaliableVehicles.toString()}</td>
-                <td><Button variant="danger" onClick={() => { deleteVehicle(id) } }>X</Button> <Button variant="success">V</Button></td>
               </tr>
     ))
   }
 
-  const printMessages = () => {
-    return messages.map(({id, email, message }, index) => (
-              <tr>
-                <td>{index + 1}</td>
-                <td>{id}</td>
-                <td>{email}</td>
-                <td>{message}</td>
-                <td><Button variant="danger" onClick={() => { deleteMessage(id) } }>X</Button> <Button variant="success">V</Button></td>
-              </tr>
-    ))
-  }
+    
 
   return (
     <>
       <Slider />
     <div className="dashboard-screen">
-      <div>{vehicles.length}</div>
-      <button onClick={() => { console.log(messages) }}>Show messages</button>
-       <h1 className="heading">Dashboard</h1>
+        <div className="aside-bar">
+              <ul className="list">
+                 <li className="item"><Link to="/dashboard/customers">Customers</Link></li>
+                 <li className="item"><Link to="/dashboard/add-customer">Add Customer</Link></li>
+                 <li className="item"><Link to="/dashboard/vehicles">Vehicles</Link></li>
+                 <li className="item"><Link to="/dashboard/add-vehicle">Add Vehicle</Link></li>
+                 <li className="item"><Link to="/dashboard/messages">Messages</Link></li>
+                 <li className="item"><Link to="/dashboard/orders">Orders</Link></li>
+              </ul> 
+        </div>
+        <div className="content">
+        <Outlet />
+        <h1 className="heading">Dashboard</h1>
+        <div className="customers">
+      <div className="search-bar-container">
+            <h3>Last Created Customers</h3>
+        </div>
+          <Table striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>ID</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>isAdmin</th>
+                </tr>
+              </thead>
+              <tbody>
+                { printCustomers() }
+              </tbody>
+          </Table>
+      </div>
+      <div className="messages">
+      <div className="search-bar-container">
+            <h3>Last Sended Messages</h3>
+        </div>
+            <Table striped bordered hover variant="dark">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>ID</th>
+                    <th>From</th>
+                    <th>Message</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  { printMessages() }
+                </tbody>
+            </Table>
+      </div>
       <div className="vehicles">
         <div className="search-bar-container">
-            <h3>Vehicles</h3>
-            <SearchBar onChangeFunction={(event) => { setVehiclesQuery(event.target.value) }}/>
+            <h3>Last Added Vehicles</h3>
         </div>
         <Table striped bordered hover variant="dark">
               <thead>
@@ -101,7 +134,6 @@ const DashboardScreen = () => {
                   <th>Seats</th>
                   <th>Price/Day</th>
                   <th>Avaliable</th>
-                  <th>Activities</th>
                 </tr>
               </thead>
               <tbody>
@@ -109,72 +141,7 @@ const DashboardScreen = () => {
               </tbody>
           </Table>
       </div>
-      <div className="customers">
-      <div className="search-bar-container">
-            <h3>Customers</h3>
-            <SearchBar onChangeFunction={(event) => { setCustomersQuery(event.target.value) }}/>
         </div>
-          <Table striped bordered hover variant="dark">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>ID</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                  <th>Email</th>
-                  <th>isAdmin</th>
-                  <th>Activities</th>
-                </tr>
-              </thead>
-              <tbody>
-                { printCustomers() }
-              </tbody>
-          </Table>
-      </div>
-      <div className="orders">
-      <div className="search-bar-container">
-            <h3>Orders</h3>
-            <SearchBar onChangeFunction={(event) => { setOrdersQuery(event.target.value) }}/>
-        </div>
-            <Table striped bordered hover variant="dark">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>isAdmin</th>
-                    <th>Activities</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  { printCustomers() }
-                </tbody>
-            </Table>
-      </div>
-      <div className="messages">
-      <div className="search-bar-container">
-            <h3>Messages</h3>
-            <SearchBar onChangeFunction={(event) => { setMessagesQuery(event.target.value) }}/>
-        </div>
-            <Table striped bordered hover variant="dark">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>ID</th>
-                    <th>From</th>
-                    <th>Message</th>
-                    <th>Activities</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  { printMessages() }
-                </tbody>
-            </Table>
-      </div>
     </div>
     </>
   )

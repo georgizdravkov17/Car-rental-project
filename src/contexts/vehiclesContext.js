@@ -22,6 +22,7 @@ export const VehiclesProvider = ({children}) => {
        })
     }, [])
 
+
     
 
     const deleteVehicle = (id) => {
@@ -35,8 +36,18 @@ export const VehiclesProvider = ({children}) => {
         })
     }
 
+    const createVehicle = (data) => {
+        vehicleService.create(data)
+        .then(_ => {
+            alert("Succesfully added vehicle!");
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
     return(
-        <VehiclesContext.Provider value={{vehicles, deleteVehicle}}>
+        <VehiclesContext.Provider value={{vehicles, deleteVehicle, createVehicle}}>
             {children}
         </VehiclesContext.Provider>
     )

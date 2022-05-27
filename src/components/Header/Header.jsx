@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
+import { get_logged_customer, logout_customer } from '../../helpers/functions.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCar } from '@fortawesome/free-solid-svg-icons';
 import './Header.css';
@@ -8,6 +9,8 @@ import './Header.css';
 const Header = () => {
 
   const navigate = useNavigate();
+
+  const [loggedCustomer, setLoggedCustomer] = useState(get_logged_customer());
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -19,13 +22,15 @@ const Header = () => {
       <Nav.Link as={Link} to="/">Home</Nav.Link>
       <Nav.Link as={Link} to="/vehicles">Vehicles</Nav.Link>
       <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
-      <Nav.Link as={Link} to="/orders">Orders</Nav.Link>
+      <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
       <Nav.Link as={Link} to="/about">About</Nav.Link>
       <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
     </Nav>
     <Nav>
-      <Button variant="primary" onClick={() => { navigate("/login") }}>Sign in</Button>
-      <Button variant="primary" onClick={() => { navigate("/register") }}>Sign up</Button>
+      {
+        loggedCustomer ?  <Button variant="primary" onClick={() => { logout_customer(); setLoggedCustomer(null) }}>Logout</Button> : <Button variant="primary" onClick={() => { navigate("/login") }}>Sign in</Button>
+      }
+      { !loggedCustomer && <Button variant="primary" onClick={() => { navigate("/register") }}>Sign up</Button>  }
     </Nav>
   </Navbar.Collapse>
   </Container>

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import { CustomersContext } from '../../contexts/customersContext.js';
 import { authenticate_user } from '../../services/authService.js';
 import { base_URL } from '../../helpers/constants.js';
@@ -34,9 +35,11 @@ const LoginScreen = () => {
         throw new Error("Invalid credentials!");
       }
 
+      const { id, isAdmin, ...userInfo } = foundUser;
+
       authenticate_user(login_URL, values)
       .then(_ => {
-        localStorage.setItem("customer", JSON.stringify(values));
+        localStorage.setItem("customer", JSON.stringify({id, isAdmin}));
         alert("Succesfully login");
       })
       .catch(err => {
