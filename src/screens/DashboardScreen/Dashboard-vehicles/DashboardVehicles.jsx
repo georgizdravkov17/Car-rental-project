@@ -27,9 +27,16 @@ const DashboardVehicles = () => {
                 <td>{numberOfSeats}</td>
                 <td>{pricePerDay}</td>
                 <td>{avaliableVehicles.toString()}</td>
-                <td><Button variant="danger" onClick={() => { deleteVehicle(id) } }>X</Button> <Button variant="success">V</Button></td>
+                <td>
+                <Button variant="danger" onClick={() => { deleteVehicle(id) } }>X</Button> 
+                <Button variant="success" onClick={() => { navigate(`/dashboard/vehicles/update/${id}`) }}>V</Button>
+                </td>
               </tr>
     ))
+  }
+
+  const onSearch = () => {
+      
   }
 
   return (
@@ -37,7 +44,7 @@ const DashboardVehicles = () => {
         <div className="vehicles">
         <div className="search-bar-container">
             <h3>Vehicles</h3>
-            <SearchBar onChangeFunction={(event) => { setVehiclesQuery(event.target.value) }}/>
+            <SearchBar onSearchFunction={onSearch} onChangeFunction={(event) => { setVehiclesQuery(event.target.value) }}/>
         </div>
         <Table striped bordered hover variant="dark">
               <thead>

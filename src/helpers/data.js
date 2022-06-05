@@ -1,6 +1,13 @@
 export const carsImages = [
     "https://blogmedia.dealerfire.com/wp-content/uploads/sites/321/2018/05/Top-10-Mercedes-Benz-Instagram-Photos-Videos-and-Posts_o.jpg",
-    "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+    "https://cdn.vox-cdn.com/thumbor/b4AlM6q2naxj3n4doYTGGnuZOzs=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22434241/ahawkins_20210404_4511_0035.jpg",
+    "https://www.wardsauto.com/sites/wardsauto.com/files/styles/article_featured_retina/public/Mercedes%20S-Class%20wheel%20and%20central%20screen.jpg?itok=X7COvN6x",
+    "https://images.unsplash.com/photo-1618418721668-0d1f72aa4bab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "https://images.unsplash.com/photo-1605557626567-5e94aac391f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+    "https://images.unsplash.com/photo-1649711429674-c323163183d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    "https://istanbullimo.com/img/luxury-4x4.jpeg",
+    "https://d2j40m88aovabi.cloudfront.net/storage/app/public/vehicle/main/4482812288b81a269ada9691ba9f914b.jpg"
 ]
 
 export const carsVideos = [

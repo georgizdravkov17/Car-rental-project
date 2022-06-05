@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, BrowserRouter as Router  } from 'react-router-dom';
 import { Header, Footer } from './components/components.js';
 import { DashboardScreen, HomeScreen, LoginScreen, NotFoundScreen, RegisterScreen, AboutScreen, ContactScreen ,VehiclesScreen, ProfileScreen } from './screens/screens.js';
-import { DashboardVehicleForm, DashboardVehicles, DashboardCustomers, DashboardCustomerForm, DashboardMessages, DashboardOrders } from './screens/DashboardScreen/dashboardScreens.js';
+import { DashboardVehicleForm, DashboardVehicles, DashboardEditVehicleForm ,DashboardCustomers, DashboardCustomerForm, DashboardMessages, DashboardOrders } from './screens/DashboardScreen/dashboardScreens.js';
 import { VehiclesProvider } from './contexts/vehiclesContext.js';
 import { CustomersProvider } from './contexts/customersContext.js';
 import { OrdersProvider } from './contexts/ordersContext.js';
@@ -28,7 +28,9 @@ function App() {
               <Route exact path="/dashboard" element={<DashboardScreen />}>
                    <Route path="customers" element={<DashboardCustomers />}/>
                    <Route path="add-customer" element={<DashboardCustomerForm />}/>
-                   <Route path="vehicles" element={<DashboardVehicles />}/>
+                   <Route path="vehicles" element={<DashboardVehicles />}>
+                      <Route path="update/:id" element={<DashboardEditVehicleForm />} />
+                   </Route>
                    <Route path="add-vehicle" element={<DashboardVehicleForm />}/>
                    <Route path="orders" element={<DashboardOrders />}/>
                    <Route path="messages" element={<DashboardMessages />}/>

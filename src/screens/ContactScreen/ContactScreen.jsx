@@ -29,7 +29,7 @@ const ContactScreen = () => {
         <Slider />
          <div className="contact-container box-shadow">
               <div className="img">
-                   <img src={carsImages[0]} alt="Car" />
+                   <img src={carsImages[3]} alt="Car" />
               </div>
               <div className="form-container ">
               <Formik

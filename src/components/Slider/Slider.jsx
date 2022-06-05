@@ -1,10 +1,11 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import { carsImages } from '../../helpers/data.js';
+import './Slider.css';
 
 const Slider = () => {
   return (
-    <Carousel style={{height: '70vh', width: '100vw'}}>
+    <Carousel className="slider" style={{height: '70vh', width: '100vw'}}>
   <Carousel.Item>
     <img
       className="d-block w-100"

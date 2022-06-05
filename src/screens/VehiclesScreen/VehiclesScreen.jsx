@@ -29,28 +29,28 @@ const VehiclesScreen = () => {
            { printVehicles(vehicleTypes.luxury) }
          </div>
       </div>
-      <HeaderSection img={carsImages[0]}/>
+      <HeaderSection img={carsImages[5]}/>
       <div className="economy-vehicles wrapper">
          <h1 className="heading">Economy Vehicles</h1>
          <div className="container">
            { printVehicles(vehicleTypes.economy) }
          </div>
       </div>
-      <HeaderSection img={carsImages[0]}/>
+      <HeaderSection img={carsImages[6]}/>
       <div className="estate-vehicles wrapper">
          <h1 className="heading">Estate Vehicles</h1>
          <div className="container">
            { printVehicles(vehicleTypes.estate) }
          </div>
       </div>
-      <HeaderSection img={carsImages[0]}/>
+      <HeaderSection img={carsImages[7]}/>
       <div className="suv-vehicles wrapper">
          <h1 className="heading">SUV Vehicles</h1>
          <div className="container">
            { printVehicles(vehicleTypes.suv) }
          </div>
       </div>
-      <HeaderSection img={carsImages[0]}/>
+      <HeaderSection img={carsImages[8]}/>
       <div className="cargo-vehicles wrapper">
          <h1 className="heading">Cargo Vehicles</h1>
          <div className="container">

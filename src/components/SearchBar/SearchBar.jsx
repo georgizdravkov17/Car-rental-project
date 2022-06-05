@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, FormControl, Button } from 'react-bootstrap';
 
-const SearchBar = ({onChangeFunction}) => {
+const SearchBar = ({onChangeFunction, onSearchFunction}) => {
   return (
     <Form className="d-flex">
         <FormControl
@@ -11,7 +11,7 @@ const SearchBar = ({onChangeFunction}) => {
           aria-label="Search"
           onChange={onChangeFunction}
         />
-        <Button variant="primary">Search</Button>
+        <Button variant="primary" onClick={onSearchFunction}>Search</Button>
       </Form>
   )
 }

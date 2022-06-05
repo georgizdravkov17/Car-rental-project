@@ -35,7 +35,7 @@ const HomeScreen = () => {
            { printVehicles(vehicleTypes.luxury) }
            </div>
         </div>
-        <HeaderSection img={carsImages[0]}/>
+        <HeaderSection img={carsImages[3]}/>
         <div className="economy-vehicles wrapper">
         <div className="upper">
            <h1 className="heading">Economy Vehicles</h1>
@@ -45,7 +45,7 @@ const HomeScreen = () => {
            { printVehicles(vehicleTypes.economy) }
            </div>
         </div>
-        <HeaderSection img={carsImages[0]}/>
+        <HeaderSection img={carsImages[2]}/>
         <div className="suv-vehicles wrapper">
         <div className="upper">
            <h1 className="heading">SUV Vehicles</h1>
@@ -55,7 +55,7 @@ const HomeScreen = () => {
            { printVehicles(vehicleTypes.suv) }
            </div>
         </div>
-        <HeaderSection img={carsImages[0]}/>
+        <HeaderSection img={carsImages[1]}/>
         <div className="cargo-vehicles wrapper">
         <div className="upper">
            <h1 className="heading">Cargo Vehicles</h1>
@@ -65,7 +65,7 @@ const HomeScreen = () => {
            { printVehicles(vehicleTypes.cargo) }
            </div>
         </div>
-        <HeaderSection img={carsImages[0]}/>
+        <HeaderSection img={carsImages[4]}/>
         <div className="estate-vehicles wrapper">
         <div className="upper">
            <h1 className="heading">Estate Vehicles</h1>
